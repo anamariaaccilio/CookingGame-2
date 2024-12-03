@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     AudioSource m_AudioClockTick;
     public AudioClip m_AudioClip;  // Reference to the tick sound
+    public AudioClip m_AudioZero;  // Reference to the sound to play when timer hits 00:00
 
     public TextMeshPro m_TimerText;  // Reference to the TextMeshPro component
     public int m_StartMinutes = 4;   // Starting minutes (you can change this value)
@@ -15,6 +16,7 @@ public class Timer : MonoBehaviour
     private float timeRemaining;   // Time remaining in seconds
     private float lastTickTime;    // Tracks the last time the tick sound was played
     private bool isInLastMinute = false; // Flag to track if we're in the last minute
+    private bool hasPlayedZeroSound = false;  // Flag to ensure the "00:00" sound is played only once
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class Timer : MonoBehaviour
         m_AudioClockTick = gameObject.AddComponent<AudioSource>();
         m_AudioClockTick.clip = m_AudioClip;  // Set the tick sound clip
         m_AudioClockTick.loop = false;  // Ensure it doesn't loop (since it's a single tick sound)
+
         lastTickTime = timeRemaining;  // Set the initial last tick time
     }
 
@@ -41,6 +44,14 @@ public class Timer : MonoBehaviour
         {
             // Ensure timeRemaining doesn't go below zero
             timeRemaining = 0;
+
+            // Play the "00:00" sound only once when timer hits zero
+            if (!hasPlayedZeroSound)
+            {
+                m_AudioClockTick.clip = m_AudioZero; // Set to the "00:00" sound
+                m_AudioClockTick.Play();  // Play the "00:00" sound
+                hasPlayedZeroSound = true;  // Prevent the sound from playing again
+            }
         }
 
         UpdateTimerText();  // Update the text on each frame
@@ -57,6 +68,7 @@ public class Timer : MonoBehaviour
         if (isInLastMinute && Mathf.Floor(timeRemaining) < Mathf.Floor(lastTickTime))
         {
             // Play tick sound
+            m_AudioClockTick.clip = m_AudioClip;  // Set to the tick sound
             m_AudioClockTick.Play();
 
             // Update the last tick time
