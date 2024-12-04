@@ -16,6 +16,8 @@ MonoBehaviour:
   colorSpace: 7
   requestsVisualFaceTracking: 1
   requestsAudioFaceTracking: 1
-  telemetryProjectGuid: 
+  telemetryProjectGuid: 859326c8-92ff-4d42-a6d8-e198c045872d
+  Stashed changes
+  706c0e1 (new-kitchen)
   bodyTrackingFidelity: 1
   bodyTrackingJointSet: 0
