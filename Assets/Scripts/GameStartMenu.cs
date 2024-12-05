@@ -83,7 +83,7 @@ public class GameStartMenu : MonoBehaviour
             {
                 SceneTransitionManager.singleton.SetGameMode(SceneTransitionManager.GameMode.TimeTrial);
             }
-                SceneTransitionManager.singleton.GoToSceneAsync(1);
+                SceneTransitionManager.singleton.GoToSceneAsync(2);
         }
         else
         {

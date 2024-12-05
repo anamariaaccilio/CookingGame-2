@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PanHeat : MonoBehaviour
 {
-    private float heatLevel = 0f; // Nivel de calor actual
+    public float heatLevel = 0f; // Nivel de calor actual
 
     public void SetHeatLevel(float level)
     {
