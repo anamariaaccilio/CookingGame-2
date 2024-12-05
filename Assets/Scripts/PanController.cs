@@ -38,7 +38,7 @@ public class PanController : MonoBehaviour
                         food.transform.position.z
                     );
                 }
-                food.GetComponent<FoodBehavior>().Cook();
+                food.GetComponent<FoodBehavior>().Cook();   
             }
         }
     }

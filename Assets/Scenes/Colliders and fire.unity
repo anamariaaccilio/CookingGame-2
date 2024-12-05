@@ -2247,6 +2247,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1156531103913591367, guid: 6f829d9417852e6408e59aeb8120beda,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pan
+      objectReference: {fileID: 0}
     - target: {fileID: 1867016760788817901, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
       propertyPath: m_IsActive
@@ -2255,6 +2260,11 @@ PrefabInstance:
     - target: {fileID: 1882236221683561805, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
       propertyPath: m_Name
+      value: Pan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882236221683561805, guid: 6f829d9417852e6408e59aeb8120beda,
+        type: 3}
+      propertyPath: m_TagString
       value: Pan
       objectReference: {fileID: 0}
     - target: {fileID: 2722739704827180007, guid: 6f829d9417852e6408e59aeb8120beda,
@@ -2270,7 +2280,7 @@ PrefabInstance:
     - target: {fileID: 3542596970827641354, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.322
+      value: 1.119
       objectReference: {fileID: 0}
     - target: {fileID: 3542596970827641354, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
@@ -2372,10 +2382,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6397036046719170722, guid: 6f829d9417852e6408e59aeb8120beda,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pan
+      objectReference: {fileID: 0}
     - target: {fileID: 6580175149847969927, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859421134218595868, guid: 6f829d9417852e6408e59aeb8120beda,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pan
       objectReference: {fileID: 0}
     - target: {fileID: 7645450166265846326, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
@@ -2402,6 +2422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771877637063261214, guid: 6f829d9417852e6408e59aeb8120beda,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pan
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7645450166265846326, guid: 6f829d9417852e6408e59aeb8120beda, type: 3}
@@ -2722,6 +2747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cook_level: 0
   current_cooking_state: 0
+  cookingSound: {fileID: 8300000, guid: 7947ea06a90416f4599e43774000c18d, type: 3}
 --- !u!82 &377256038
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3269,12 +3295,12 @@ PrefabInstance:
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e,
         type: 3}
@@ -3284,7 +3310,7 @@ PrefabInstance:
     - target: {fileID: 7387125324240799344, guid: efebdf03cb1ccd043827e933755e413e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3465,6 +3491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoveManager: {fileID: 1634790301}
   stoveIndex: 0
+  heatZoneCollider: {fileID: 0}
 --- !u!1 &408905524
 GameObject:
   m_ObjectHideFlags: 0
@@ -4354,6 +4381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cook_level: 0
   current_cooking_state: 0
+  cookingSound: {fileID: 8300000, guid: 7947ea06a90416f4599e43774000c18d, type: 3}
 --- !u!4 &519557326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3127377416852887305, guid: e367714f162349d48a5cb6f00133e149,
@@ -15433,7 +15461,7 @@ GameObject:
   - component: {fileID: 905225401}
   m_Layer: 0
   m_Name: FoodCollider
-  m_TagString: Untagged
+  m_TagString: Pan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15468,8 +15496,8 @@ Transform:
   m_GameObject: {fileID: 905225400}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0041606184, y: 0.68625295, z: 0.00679962, w: 0.7273193}
-  m_LocalPosition: {x: -0.287, y: 0.018, z: 0.263}
-  m_LocalScale: {x: 0.22899379, y: 0.067182, z: 0.2539011}
+  m_LocalPosition: {x: -0.2871, y: 0.0271, z: 0.2631}
+  m_LocalScale: {x: 0.22899379, y: 0.09589529, z: 0.2539011}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1976762998}
@@ -16564,6 +16592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cook_level: 0
   current_cooking_state: 0
+  cookingSound: {fileID: 8300000, guid: 7947ea06a90416f4599e43774000c18d, type: 3}
 --- !u!82 &1083518979
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17906,6 +17935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerCollider: {fileID: 1339974549}
+  exit_success: 0
 --- !u!1 &1231981649
 GameObject:
   m_ObjectHideFlags: 0
@@ -19059,6 +19089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoveManager: {fileID: 1634790301}
   stoveIndex: 0
+  heatZoneCollider: {fileID: 1970884632}
 --- !u!1 &1298729893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -553707666071181948, guid: a92dc75ce32edcf4db846c2f91038e5f,
@@ -29887,6 +29918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoveManager: {fileID: 1634790301}
   stoveIndex: 0
+  heatZoneCollider: {fileID: 583969355}
 --- !u!1 &1519479188
 GameObject:
   m_ObjectHideFlags: 0
@@ -30345,6 +30377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoveManager: {fileID: 1634790301}
   stoveIndex: 0
+  heatZoneCollider: {fileID: 0}
 --- !u!1 &1577728377
 GameObject:
   m_ObjectHideFlags: 0
@@ -30895,6 +30928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622164790}
   - component: {fileID: 1622164791}
+  - component: {fileID: 1622164792}
   m_Layer: 0
   m_Name: Stove BR
   m_TagString: Untagged
@@ -30934,6 +30968,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoveManager: {fileID: 1634790301}
   stoveIndex: 0
+  heatZoneCollider: {fileID: 992486879}
+--- !u!65 &1622164792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622164789}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.974382, y: 16.334862, z: 6.5488505}
+  m_Center: {x: 19.572676, y: 7.667423, z: -2.7744303}
 --- !u!1 &1634790292 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4620873618669506763, guid: a92dc75ce32edcf4db846c2f91038e5f,
@@ -30994,6 +31050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cook_level: 0
   current_cooking_state: 0
+  cookingSound: {fileID: 8300000, guid: 7947ea06a90416f4599e43774000c18d, type: 3}
 --- !u!82 &1679883264
 AudioSource:
   m_ObjectHideFlags: 0
@@ -32071,12 +32128,12 @@ PrefabInstance:
     - target: {fileID: -5002166627528804144, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.84
+      value: -53.2
       objectReference: {fileID: 0}
     - target: {fileID: -5002166627528804144, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.77
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: -4071465139580720090, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
@@ -32086,12 +32143,12 @@ PrefabInstance:
     - target: {fileID: -3262689572809963868, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.29
+      value: -53.08
       objectReference: {fileID: 0}
     - target: {fileID: -3262689572809963868, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.73
+      value: 30.9
       objectReference: {fileID: 0}
     - target: {fileID: -3109191603324505165, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
@@ -32145,13 +32202,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 379720952518722011, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 379720952518722011, guid: a92dc75ce32edcf4db846c2f91038e5f,
+        type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 379720952518722011, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.19
+      value: 15.66
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a92dc75ce32edcf4db846c2f91038e5f,
         type: 3}
@@ -33535,7 +33597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerCollider: {fileID: 905225401}
-  attractionForce: 10
+  attractionForce: 20
   maxFoodSpeed: 5
   heightLimit: 0.2
 --- !u!4 &1976762998 stripped
@@ -41213,17 +41275,17 @@ PrefabInstance:
     - target: {fileID: 3542596970827641354, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6308
+      value: -1.281
       objectReference: {fileID: 0}
     - target: {fileID: 3542596970827641354, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08513
+      value: -0.797
       objectReference: {fileID: 0}
     - target: {fileID: 3542596970827641354, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.7758
+      value: -1.913
       objectReference: {fileID: 0}
     - target: {fileID: 3542596970827641354, guid: 6f829d9417852e6408e59aeb8120beda,
         type: 3}
