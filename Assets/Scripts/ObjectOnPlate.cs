@@ -17,6 +17,15 @@ public class PlateController : MonoBehaviour
             exit_success = (foods[0].GetComponent<FoodBehavior>().current_cooking_state == CookingState.acceptable) &&
                  (foods[0].GetComponent<FoodBehavior>().current_cooking_state == CookingState.acceptable);
 
+            if (exit_success )
+            {
+                SceneTransitionManager.singleton.exitStatus = SceneTransitionManager.Exit.ExitSuccess;
+            }
+            else
+            {
+                SceneTransitionManager.singleton.exitStatus = SceneTransitionManager.Exit.ExitWithErrors;
+            }
+
             Debug.Log(exit_success);
             SceneTransitionManager.singleton.GoToSceneAsync(0);
             has_enter = true;

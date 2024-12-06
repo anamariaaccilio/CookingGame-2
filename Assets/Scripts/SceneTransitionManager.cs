@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +10,11 @@ public class SceneTransitionManager : MonoBehaviour
     public static SceneTransitionManager singleton;
     public enum GameMode { Tutorial, TimeTrial }
     public enum Recipe { None, BistecPobre, Spaghetti }
+    public enum Exit { ExitSuccess, ExitWithErrors, NoExit}
 
     public GameMode currentMode;
     public Recipe currentRecipe = Recipe.None;
-    
+    public Exit exitStatus = Exit.NoExit;
 
     private void Awake()
     {

@@ -13,6 +13,8 @@ public class GameStartMenu : MonoBehaviour
     public GameObject credits;
     public GameObject newGameAlert;
     public GameObject exitGameAlert;
+    public GameObject goodEnding;
+    public GameObject badEnding;
     public GameObject deleteScoreboardAlert;
 
     [Header("Main Menu Buttons")]
@@ -34,30 +36,45 @@ public class GameStartMenu : MonoBehaviour
 
     public List<Button> returnButtons;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        EnableMainMenu();
-
-        //Hook events
-        startButton.onClick.AddListener(StartGame);
-        newGameButton.onClick.AddListener(EnableNewGame);
-        scoreboardButton.onClick.AddListener(EnableScoreboard);
-        settingsButton.onClick.AddListener(EnableSettings);
-        creditsButton.onClick.AddListener(EnableCredits);
-        exitButton.onClick.AddListener(EnableExitGameAlert);
-        deleteScoreboardButton.onClick.AddListener(EnableScoreboardDeleteAlert);
-
-
-
-        newGameAlertButton.onClick.AddListener(DisableNewGameAlert);
-        exitGameAlertYesButton.onClick.AddListener(ExitGame);
-        exitGameAlertNoButton.onClick.AddListener(DisableExitGameAlert);
-        deleteScoreboardNoAlert.onClick.AddListener(DisableScoreboardDeleteAlert);
-
-        foreach (var item in returnButtons)
+        if (SceneTransitionManager.singleton.exitStatus == SceneTransitionManager.Exit.ExitWithErrors)
         {
-            item.onClick.AddListener(EnableMainMenu);
+            SceneTransitionManager.singleton.exitStatus = SceneTransitionManager.Exit.NoExit;
+            EnableBadEnding();
+
+        }
+        else if (SceneTransitionManager.singleton.exitStatus == SceneTransitionManager.Exit.ExitSuccess)
+        {
+            SceneTransitionManager.singleton.exitStatus = SceneTransitionManager.Exit.NoExit;
+            EnableGoodEnding();
+        }
+        else
+        {
+            EnableMainMenu();
+
+            //Hook events
+            startButton.onClick.AddListener(StartGame);
+            newGameButton.onClick.AddListener(EnableNewGame);
+            scoreboardButton.onClick.AddListener(EnableScoreboard);
+            settingsButton.onClick.AddListener(EnableSettings);
+            creditsButton.onClick.AddListener(EnableCredits);
+            exitButton.onClick.AddListener(EnableExitGameAlert);
+            deleteScoreboardButton.onClick.AddListener(EnableScoreboardDeleteAlert);
+
+
+
+            newGameAlertButton.onClick.AddListener(DisableNewGameAlert);
+            exitGameAlertYesButton.onClick.AddListener(ExitGame);
+            exitGameAlertNoButton.onClick.AddListener(DisableExitGameAlert);
+            deleteScoreboardNoAlert.onClick.AddListener(DisableScoreboardDeleteAlert);
+
+            foreach (var item in returnButtons)
+            {
+                item.onClick.AddListener(EnableMainMenu);
+            }
         }
     }
 
@@ -83,7 +100,7 @@ public class GameStartMenu : MonoBehaviour
             {
                 SceneTransitionManager.singleton.SetGameMode(SceneTransitionManager.GameMode.TimeTrial);
             }
-                SceneTransitionManager.singleton.GoToSceneAsync(2);
+                SceneTransitionManager.singleton.GoToSceneAsync(1);
         }
         else
         {
@@ -99,15 +116,37 @@ public class GameStartMenu : MonoBehaviour
         settings.SetActive(false);
         scoreboard.SetActive(false);
         credits.SetActive(false);
+        goodEnding.SetActive(false);
+        badEnding.SetActive(false);
     }
 
     public void EnableMainMenu()
     {
         mainMenu.SetActive(true);
+        goodEnding.SetActive(false);
+        badEnding.SetActive(false);
         newGameMenu.SetActive(false);
         settings.SetActive(false);
         scoreboard.SetActive(false);
         credits.SetActive(false);
+    }
+    public void EnableGoodEnding()
+    {
+        mainMenu.SetActive(false);
+        newGameMenu.SetActive(false);
+        settings.SetActive(false);
+        scoreboard.SetActive(false);
+        credits.SetActive(false);
+        goodEnding.SetActive(true);
+    }
+    public void EnableBadEnding()
+    {
+        mainMenu.SetActive(false);
+        badEnding.SetActive(true);
+        newGameMenu.SetActive(false);
+        settings.SetActive(false);
+        scoreboard.SetActive(false);
+        credits.SetActive(false);      
     }
     public void EnableNewGame()
     {
