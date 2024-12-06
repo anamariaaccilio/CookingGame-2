@@ -12299,7 +12299,7 @@ MonoBehaviour:
 
     Try again!
 
-    
+
 
 '
   m_isRightToLeft: 0
@@ -14420,10 +14420,10 @@ MonoBehaviour:
   m_IsTrackedAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Is Tracked
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 795e33da-0558-4f3f-9846-d7813ac1ec0f
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -14523,10 +14523,10 @@ MonoBehaviour:
   m_UIScrollAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Scroll
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 
+      m_Id: 89882b13-c05d-4d15-8855-c63f6457f3c3
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
