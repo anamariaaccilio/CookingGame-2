@@ -1,5 +1,12 @@
 # Cooking Express VR: ¡Ratatouille! 🍲🎮
 
+## 👥 **Team**
+
+- **Accilio Villanueva, Ana María** 
+- **Alfaro Caso, Gonzalo**
+- **Castro Padilla, Juan Diego**
+
+
 ## Descripción del Proyecto 📝  
 *Cooking Express VR* es un juego de simulación de cocina en realidad virtual, diseñado para ofrecer una experiencia inmersiva en una cocina profesional. Los jugadores deben interactuar con diversos ingredientes y utensilios para cocinar y completar pedidos bajo presión de tiempo. Con mecánicas arcade y entornos dinámicos, este proyecto es ideal para los que buscan retos rápidos y precisos.
 
