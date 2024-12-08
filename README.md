@@ -20,8 +20,12 @@ Recuerda que debes empezar por la **1 start scene**, la cual te guiará a la **2
 Primero, necesitas clonar el repositorio en tu máquina local para obtener todos los archivos del proyecto. Abre tu terminal y ejecuta el siguiente comando:
 ```bash
 git clone https://github.com/anamariaaccilio/CookingGame-2.git
+```
+
+```bash
 cd CookingGame-2
 ```
+
 Este comando descargará todo el código fuente del proyecto desde GitHub y cambiará el directorio a la carpeta del proyecto clonado.
 
 ### 2. Abrir el Proyecto en Unity
